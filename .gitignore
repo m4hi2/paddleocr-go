@@ -3,3 +3,5 @@ paddle_c/third_party
 paddle_c/version.txt
 inference/
 demo
+.idea/
+paddleocr-go
