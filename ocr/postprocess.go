@@ -1,10 +1,10 @@
 package ocr
 
 import (
+	"github.com/m4hi2/paddleocr-go/paddle"
 	"image"
 	"image/color"
 	"math"
-	"paddleocr-go/paddle"
 	"sort"
 
 	"github.com/LKKlein/gocv"

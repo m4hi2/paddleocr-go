@@ -1,6 +1,6 @@
-module paddleocr-go
+module github.com/m4hi2/paddleocr-go
 
-go 1.14
+go 1.19
 
 require (
 	github.com/LKKlein/gocv v0.28.0
