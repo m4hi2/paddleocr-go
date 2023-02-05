@@ -1,10 +1,10 @@
 # params for prediction engine
-use_gpu: true
+use_gpu: false
 ir_optim: true
 enable_mkldnn: false
 # use_zero_copy_run: true
 use_tensorrt: false
-num_cpu_threads: 6
+num_cpu_threads: 1
 gpu_id: 0
 gpu_mem: 2000
 
