@@ -4,7 +4,7 @@ import (
 	"flag"
 	"log"
 
-	"paddleocr-go/ocr"
+	"github.com/m4hi2/paddleocr-go/ocr"
 )
 
 var (
@@ -17,7 +17,7 @@ var (
 
 func init() {
 	flag.StringVar(&confFile, "config", "config/conf.yaml", "config from ocr system. If not given, will use default config.")
-	flag.StringVar(&image, "image", "", "image to predict. if not given, will use image_dir")
+	flag.StringVar(&image, "image", "images/test.jpg", "image to predict. if not given, will use image_dir")
 	flag.StringVar(&imageDir, "image_dir", "", "imgs in dir to be predicted. if not given, will check servering")
 	flag.BoolVar(&useServering, "use_servering", false, "whether to use ocr server. [default: false]")
 	flag.StringVar(&port, "port", "18600", "which port to serve ocr server. [default: 18600].")
