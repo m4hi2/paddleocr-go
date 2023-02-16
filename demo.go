@@ -28,7 +28,7 @@ func main() {
 	sys := ocr.NewOCRSystem(confFile, nil)
 
 	if image != "" {
-		img := ocr.ReadImage(image)
+		img, _ := ocr.ReadImage(image)
 		results := sys.PredictOneImage(img)
 		for _, res := range results {
 			log.Println(res)

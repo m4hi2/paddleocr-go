@@ -251,7 +251,11 @@ func (ocr *OCRSystem) PredictDirImages(dirname string) map[string][]OCRText {
 	results := make(map[string][]OCRText, len(imgs))
 	for i := 0; i < len(imgs); i++ {
 		imgname := imgs[i]
-		img := ReadImage(imgname)
+		img, err := ReadImage(imgname)
+		if err != nil {
+			log.Println(err)
+			continue
+		}
 		res := ocr.PredictOneImage(img)
 		results[imgname] = res
 	}

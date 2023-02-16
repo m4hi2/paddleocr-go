@@ -2,6 +2,7 @@ package ocr
 
 import (
 	"archive/tar"
+	"errors"
 	"io"
 	"io/ioutil"
 	"log"
@@ -43,13 +44,13 @@ func getBool(args map[string]interface{}, key string, dv bool) bool {
 	return dv
 }
 
-func ReadImage(image_path string) gocv.Mat {
+func ReadImage(image_path string) (gocv.Mat, error) {
 	img := gocv.IMRead(image_path, gocv.IMReadColor)
 	if img.Empty() {
 		log.Printf("Could not read image %s\n", image_path)
-		os.Exit(1)
+		return img, errors.New("could not read image")
 	}
-	return img
+	return img, nil
 }
 
 func clip(value, min, max int) int {
